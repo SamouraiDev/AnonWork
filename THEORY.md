@@ -112,9 +112,9 @@ ZeroLink requires such P2P anonymous protocols at mixing and at transaction broa
 
 Elimination of the Tor dependency should be an interest of future research.  
  
-### Privacy Is Teamwork
+### Anonymity Sets
 
-The theoretical anonymity set of a mixing technique is misleading. If one user of the mix gets deanonymized, the real anonymity set of the rest of the users drops. For instance, if one user participates in the mix through a full node and the rest through a web wallet, the anonymity set of the full node user against the web wallet company is zero. Therefore it is not acceptable that a set of users are using a mixing technique in a flawed way.
+Anonymity sets MUST be based on additive calculations as opposed to multiplicative. Multiplicative anonymity set calculations are misleading to the point of outright dishonesty, and as such have no place in the coinjoin space. 
 
 ### Transactions And Transaction Chains
 
@@ -123,7 +123,6 @@ The theoretical anonymity set of a mixing technique is misleading. If one user o
 Any Bitcoin mixing technique must use a common denomination, otherwise simple amount analysis can re-establish the links, as Kristov Atlas did in his [CoinJoin Sudoku](http://www.coinjoinsudoku.com) analysis of Blockchain.info's [SharedCoin](https://github.com/sharedcoin/Sharedcoin). Since the service has been discontinued.
 This notion leads to mixing in multiple rounds. For example if a user wants to mix eight bitcoins and the mixing denomination is one bitcoin, then it must use eight mixing rounds.  
 Additionally when a Bitcoin wallet does not find enough value on an unspent transaction output (utxo), then it joins together that utxo with another utxo the wallet contains.  
-If the post-mix wallet would function as a normal Bitcoin wallet too, the observer would notice post-mix transactions. Those are joining together mixed outputs. Since pre-mix wallets naturally divide and join utxos in order to fund a mixing round with the correct amount, similarly to CoinJoin Sudoku, a simple amount analysis on transactions chains, instead of transactions could re-establish links between pre-mix and post-mix wallets.  
 
 ![](http://i.imgur.com/AqnwKMr.png)
 
@@ -419,10 +418,10 @@ Outputs from different denominated pools may be used.
 
 ![](https://i.imgur.com/1IotuiI.png)
 
-#### Change ScriptPubKeys
+<del>#### Change ScriptPubKeys
 |Basic Post-Mix Wallet Requirement|Post-Mix Wallet Uniformity Requirement|
 |---------------------------------|--------------------------------------|
-||Post-mix wallet SHOULD always generate P2WPKH ScriptPubKeys as the change output of a built transction.|
+||Post-mix wallet SHOULD always generate P2WPKH ScriptPubKeys as the change output of a built transction.|</del>
 
 #### Active ScriptPubKeys
 |Basic Post-Mix Wallet Requirement|Post-Mix Wallet Uniformity Requirement|

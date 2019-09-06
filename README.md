@@ -21,14 +21,17 @@ Whirlpool is a fully modular CoinJoin implementation based on a heavily modified
   
 - **Strong**
   - Structurally built on a strong mathematical foundation. Each Whirlpool cycle:
-    - **100%** maximum entropy (10.54 bits)
-    - **1496** possible interpretations
+    - **100%** maximum entropy (10.54 bits for 5 inputs/5 outputs)
+    - **1496** possible interpretations  (for 5 inputs/5 outputs)
     - **Never** any deterministic links between inputs and outputs
     - **Never** cycle with yourself
-    - **Never** cycle with UTXOs seen in a previous cycle.
+    - **Never** cycle with more than 1 UTXO seen in a previous cycle.
 
 An example of a Whirlpool CoinJoin transaction can be found on [KYCP.org](https://www.kycp.org/#/323df21f0b0756f98336437aa3d2fb87e02b59f1946b714a7b09df04d429dec2/in)
 [![](https://samouraiwallet.com/static/public/images/whirlpool/kycp-example.png)]((https://www.kycp.org/#/323df21f0b0756f98336437aa3d2fb87e02b59f1946b714a7b09df04d429dec2/in))
+
+An example of a Whirlpool CoinJoin transaction can be found on 
+![](charts/comparative.png)
 
 ## Using Whirlpool
 Whirlpool requires the use of a blinded coordinator server to pass messages between clients. This server doesn't and crucially **cannot** know the contents of the messages it is passing. The following clients have been created and open sourced by the developers of Samourai Wallet and offer unrestricted access to the Samourai operated coordinator server.
